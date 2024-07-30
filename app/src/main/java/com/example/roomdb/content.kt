@@ -9,4 +9,7 @@ object content {
     fun deleteListData(){
         dataList.clear()
     }
+    fun addData(array:Array<String>?){
+        dataList.add(dataModel(array!!.get(0),array.get(1),array.get(2)))
+    }
 }

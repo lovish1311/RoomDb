@@ -1,5 +1,6 @@
 package com.example.roomdb.Fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -30,6 +31,7 @@ class listData : Fragment() {
 
     }
 
+    @SuppressLint("DetachAndAttachSameFragment")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +41,8 @@ class listData : Fragment() {
         val adaptar = RvAdaptar(requireContext(), content.getList())
         binding.recyclerView.adapter = adaptar
         binding.recyclerView.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+        val array = arguments?.getStringArray("data")
+        content.addData(array)
         binding.buttonAddData.setOnClickListener {
             (context as AppCompatActivity).supportFragmentManager
                 .beginTransaction()
@@ -47,6 +51,12 @@ class listData : Fragment() {
         }
         binding.buttonDeleteAll.setOnClickListener {
             content.deleteListData()
+            adaptar.notifyItemRangeRemoved(0,adaptar.dataList.size)
+            (context as AppCompatActivity).supportFragmentManager
+                .beginTransaction()
+                .detach(listData())
+                .attach(listData())
+                .commit()
         }
         return binding.root
     }
