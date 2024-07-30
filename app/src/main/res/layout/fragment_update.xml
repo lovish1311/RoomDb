@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.update">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_firstName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.248">
+
+            <EditText
+                android:id="@+id/tv_firstName2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#00F4EBEB"
+                android:gravity="center_vertical"
+                android:hint="First Name"
+                android:inputType="text"
+                android:paddingStart="15dp"
+                android:textColor="#302B2B"
+                android:textColorHighlight="#655353"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_lastName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="40dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="30dp"
+            app:layout_constraintEnd_toEndOf="@id/cv_firstName2"
+            app:layout_constraintStart_toStartOf="@id/cv_firstName2"
+            app:layout_constraintTop_toBottomOf="@id/cv_firstName2">
+
+            <TextView
+                android:id="@+id/tv_lastName2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#00F4EBEB"
+                android:gravity="center_vertical"
+                android:hint="Last Name"
+                android:inputType="text"
+                android:paddingStart="15dp"
+                android:textColor="#302B2B"
+                android:textColorHighlight="#655353"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_age2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="40dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="30dp"
+            app:layout_constraintEnd_toEndOf="@id/cv_lastName2"
+            app:layout_constraintStart_toStartOf="@id/cv_lastName2"
+            app:layout_constraintTop_toBottomOf="@id/cv_lastName2">
+
+            <TextView
+                android:id="@+id/tv_age2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#00F4EBEB"
+                android:gravity="center_vertical"
+                android:hint="Age"
+                android:inputType="text"
+                android:paddingStart="15dp"
+                android:textColor="#302B2B"
+                android:textColorHighlight="#655353"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/button_addDAta2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="Update"
+            app:layout_constraintEnd_toEndOf="@+id/cv_age2"
+            app:layout_constraintStart_toStartOf="@+id/cv_age2"
+            app:layout_constraintTop_toBottomOf="@+id/cv_age2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
