@@ -22,6 +22,7 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="54dp"
+            android:background="#CDDC39"
             android:gravity="center_vertical"
             android:paddingStart="20dp"
             android:text="TextView"

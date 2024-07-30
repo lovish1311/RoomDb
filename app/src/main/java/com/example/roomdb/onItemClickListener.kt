@@ -1,5 +1,6 @@
 package com.example.roomdb
 
-interface onItemClickListener {
+interface
+onItemClickListener {
     fun onitemClicked(position:Int)
 }

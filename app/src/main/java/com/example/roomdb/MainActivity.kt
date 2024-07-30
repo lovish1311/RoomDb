@@ -2,12 +2,19 @@ package com.example.roomdb
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.roomdb.Fragments.AddData
 import com.example.roomdb.Fragments.update
+import com.example.roomdb.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(),onItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding=ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container,AddData())
+            .commit()
     }
 
     override fun onitemClicked(position: Int) {

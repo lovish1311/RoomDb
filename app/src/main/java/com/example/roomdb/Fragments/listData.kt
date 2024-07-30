@@ -7,10 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roomdb.R
 import com.example.roomdb.RvAdaptar
 import com.example.roomdb.content
 import com.example.roomdb.databinding.FragmentListDataBinding
+import com.example.roomdb.onItemClickListener
 
 
 class listData : Fragment() {
@@ -32,9 +35,19 @@ class listData : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-       val binding = FragmentListDataBinding.inflate(layoutInflater)
-        val adaptar = RvAdaptar(requireContext(),content.getList())
-        binding.recyclerView.adapter=adaptar
+        val binding = FragmentListDataBinding.inflate(layoutInflater)
+        val adaptar = RvAdaptar(requireContext(), content.getList())
+        binding.recyclerView.adapter = adaptar
+        binding.recyclerView.layoutManager=LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+        binding.buttonAddData.setOnClickListener {
+            (context as AppCompatActivity).supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, AddData())
+                .commit()
+        }
+        binding.buttonDeleteAll.setOnClickListener {
+            content.deleteListData()
+        }
         return binding.root
     }
 

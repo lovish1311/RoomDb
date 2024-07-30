@@ -94,7 +94,7 @@
         </androidx.cardview.widget.CardView>
 
         <Button
-            android:id="@+id/button_addDAta"
+            android:id="@+id/bt_addData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
@@ -102,5 +102,16 @@
             app:layout_constraintEnd_toEndOf="@+id/cv_age"
             app:layout_constraintStart_toStartOf="@+id/cv_age"
             app:layout_constraintTop_toBottomOf="@+id/cv_age" />
+
+        <Button
+            android:id="@+id/bt_seeList"
+            android:layout_width="108dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#F44336"
+            android:text="See list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/bt_addData"
+            app:layout_constraintStart_toStartOf="@+id/bt_addData"
+            app:layout_constraintTop_toBottomOf="@+id/bt_addData" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

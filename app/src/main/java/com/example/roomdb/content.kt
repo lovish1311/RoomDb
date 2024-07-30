@@ -6,4 +6,7 @@ object content {
         dataList.add(dataModel("Lovis","Sharma","22"))
         return dataList
     }
+    fun deleteListData(){
+        dataList.clear()
+    }
 }
